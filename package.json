@@ -1,0 +1,25 @@
+{
+  "name": "orderstrike",
+  "version": "1.0.0",
+  "description": "Military-grade brevity for Claude Code. Zero fluff. Maximum token efficiency.",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "orderstrike": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1"
+  },
+  "keywords": [
+    "claude",
+    "mcp",
+    "mcp-server",
+    "skill",
+    "brevity"
+  ],
+  "author": "",
+  "license": "MIT"
+}
