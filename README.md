@@ -1,32 +1,64 @@
 # OrderStrike
 
-Military-grade brevity for Claude Code. Zero fluff. Maximum token efficiency.
+Military-grade brevity for Claude Code and Codex. Zero fluff. Maximum token efficiency.
 
 ## SITREP
-Current AI interactions suffer from excessive token bloat. Pleasantries, apologies, and conversational padding drain resources and cognitive bandwidth. The objective of `orderstrike` is simple: eliminate all unnecessary tokens. Fast. Focused. Efficient.
+Current AI interactions suffer from token bloat. Pleasantries, apologies, repeated framing, and verbose filler drain time and context. `orderstrike` is a shared brevity protocol for Claude Code and Codex: terse by default, but not reckless.
 
 ## DEPLOYMENT
-Install via `npx` into your Claude Code skills:
+Primary path: install as a skill package.
 
 ```bash
 npx skills add <username>/orderstrike
 ```
 
-*Or use as a standard MCP server in your preferred client.*
+Compatibility path: use it as an MCP server in clients that consume MCP prompts or tools.
 
-## COMBAT PROTOCOL
-OrderStrike modifies Claude's system prompt to enforce a strict, military-grade communication style.
-
-### Standard Claude Output
-> "Hello! The TypeScript error you're seeing is occurring because you're trying to access a property on a value that could potentially be undefined. TypeScript's strict null checks are flagging this as a potential runtime error. I'd recommend adding a null check or using optional chaining." (61 tokens)
-
-### OrderStrike Output
+```bash
+npm install
+npm start
 ```
-  SITREP: Value maybe undefined.
-  THREAT: Potential runtime error.
-  ACTION: Use optional chain: `user?.property`.
-  **OVER.**
- (24 tokens)
+
+## PROTOCOL
+OrderStrike does not directly rewrite a client system prompt on its own. It exposes one canonical protocol artifact that host clients can install or inject.
+
+Default behavior:
+
+- shortest correct answer first
+- no greetings, apologies, or conversational padding
+- optional `SITREP / THREAT / ACTION` structure when diagnosis benefits from it
+- automatic expansion when safety, ambiguity, or risk requires more detail
+
+Example:
+
+Standard:
+
+> "The value may be undefined, so TypeScript is warning about a possible runtime error. Add a guard or use optional chaining."
+
+OrderStrike:
+
+```text
+Value may be undefined. Use `user?.property`.
+```
+
+High-risk case:
+
+```text
+Do not run `git reset --hard` if the worktree may contain uncommitted work you need.
+Check `git status` first. Use a safer targeted restore if possible.
+```
+
+## ARTIFACTS
+
+- [SKILL.md](/Users/vyquocvu/Development/orderstrike/SKILL.md): installable skill contract
+- [prompts/orderstrike.md](/Users/vyquocvu/Development/orderstrike/prompts/orderstrike.md): shared prompt artifact
+- [index.js](/Users/vyquocvu/Development/orderstrike/index.js): thin MCP compatibility wrapper
+- [src/protocol.js](/Users/vyquocvu/Development/orderstrike/src/protocol.js): canonical protocol source
+
+## TESTING
+
+```bash
+npm test
 ```
 
 ## LICENSE
