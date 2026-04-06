@@ -21,10 +21,13 @@ OrderStrike modifies Claude's system prompt to enforce a strict, military-grade 
 > "Hello! The TypeScript error you're seeing is occurring because you're trying to access a property on a value that could potentially be undefined. TypeScript's strict null checks are flagging this as a potential runtime error. I'd recommend adding a null check or using optional chaining." (61 tokens)
 
 ### OrderStrike Output
-> SITREP: Value maybe undefined.
-> THREAT: Potential runtime error.
-> ACTION: Use optional chain: `user?.property`.
-> **OVER.** (24 tokens)
+```
+  SITREP: Value maybe undefined.
+  THREAT: Potential runtime error.
+  ACTION: Use optional chain: `user?.property`.
+  **OVER.**
+ (24 tokens)
+```
 
 ## LICENSE
 MIT
