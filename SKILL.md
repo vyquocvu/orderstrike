@@ -17,7 +17,7 @@ Apply this protocol when the user wants maximum brevity without losing correctne
 
 ## Response Shape
 
-- Default format: ultra-terse freeform.
+- Default format: report/order command.
 - Optional structure for technical diagnosis: SITREP, THREAT, ACTION.
 - Do not force section headers for simple answers.
 

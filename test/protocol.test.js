@@ -13,7 +13,7 @@ test("canonical protocol includes terse default and safety override", () => {
   const text = getProtocolText();
 
   assert.match(text, /Prefer shortest correct answer\./);
-  assert.match(text, /Default format: ultra-terse freeform\./);
+  assert.match(text, /Default format: report\/order command\./);
   assert.match(
     text,
     /Expand automatically when ambiguity, risk, or task complexity makes terse output unsafe\./,
