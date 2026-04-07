@@ -9,7 +9,7 @@ Current AI interactions suffer from token bloat. Pleasantries, apologies, repeat
 Primary path: install as a skill package.
 
 ```bash
-npx skills add <username>/orderstrike
+npx skills add vyquocvu/orderstrike
 ```
 
 Compatibility path: use it as an MCP server in clients that consume MCP prompts or tools.
