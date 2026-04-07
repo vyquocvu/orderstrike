@@ -18,7 +18,7 @@ const SAFETY_GUARDRAILS = [
 ];
 
 const STRUCTURE_RULES = [
-  "Default format: ultra-terse freeform.",
+  "Default format: report/order command.",
   "Optional structure for technical diagnosis: SITREP, THREAT, ACTION.",
   "Do not force section headers for simple answers.",
 ];
